@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/bootstrap.css">
+  <style>
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      background: url("https://picsum.photos/1920/1080/?random=1") no-repeat center center/cover;
+    }
+
+    .container {
+      margin-bottom: 2rem;
+    }
+
+    .toast {
+      backdrop-filter: blur(10px);
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+  </style>
+</head>
+
+<body>
+  <script src="../js/jquery-3.6.0.min.js"></script>
+  <script src="../js/bootstrap.bundle.min.js"></script>
+
+  <button id="btn1" type="button" class="btn btn-primary">Show Toast 1</button>
+  <button id="btn2" type="button" class="btn btn-primary">Show Toast 2</button>
+  <button id="btn3" type="button" class="btn btn-primary">Show Toast 3</button>
+  <div class="row position-fixed flex-column-reverse" style="bottom: 0;right: 0;">
+    <div class="col">
+      <!-- toast 預設看不到, 可以用 .show 來看見 -->
+      <!-- data-autohide="false" 彈出來不會消失, 預設是 true 彈出來過一段時間自動消失-->
+      <div id="toast1" class="toast" role="alert" data-autohide="true">
+        <!-- toast-header 是用 flex, 將 img strong small button 垂直置中對齊, 並在 strong 設定 mr-auto 將 small button 推到右邊 -->
+        <div class="toast-header">
+          <img src="https://picsum.photos/20/20/?random=1" class="rounded mr-2" alt="...">
+          <strong class="mr-auto">Show Toast 1</strong>
+          <small>11 mins ago</small>
+          <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="toast-body">
+          瞭解說過一身上午，烏日又有阿摩斯風雲歐洲令人，找到效率搭配宣佈舉辦你不，超過傷害不出奇怪禮物我只動力收費是有合作網際，發言處罰電池沒什麼犯罪數碼成為街道完成效益法律責任手指，練習信心等等達到證明看法不在地球三年而且兩次，不大開發者大會姓名出了，經歷手術警。
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <!-- toast 預設看不到, 可以用 .show 來看見 -->
+      <div id="toast2" class="toast" role="alert">
+        <!-- toast-header 是用 flex, 將 img strong small button 垂直置中對齊, 並在 strong 設定 mr-auto 將 small button 推到右邊 -->
+        <div class="toast-header">
+          <img src="https://picsum.photos/20/20/?random=1" class="rounded mr-2" alt="...">
+          <strong class="mr-auto">Show Toast 2</strong>
+          <small>11 mins ago</small>
+          <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="toast-body">
+          吃飯舉報影音恢復不必，一份數碼大小就業商品方法回事，投資讀者圖書我又戀愛組圖相關圖片，它們告訴你大師行情一人要去每一個依然承諾，很容易我對事項展開建築爭取，讓我們聯想增長留學應該客服書庫技能爆炸超市他對演員，選項禮品所說給我一台，科技怎麼辦億元不肯抽菸區。
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <!-- toast 預設看不到, 可以用 .show 來看見 -->
+      <div id="toast3" class="toast" role="alert">
+        <!-- toast-header 是用 flex, 將 img strong small button 垂直置中對齊, 並在 strong 設定 mr-auto 將 small button 推到右邊 -->
+        <div class="toast-header">
+          <img src="https://picsum.photos/20/20/?random=1" class="rounded mr-2" alt="...">
+          <strong class="mr-auto">Show Toast 3</strong>
+          <small>11 mins ago</small>
+          <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="toast-body">
+          中心無論一大人士通過報名查看報價這就是就業，蒐集前往製造禮物好了不行參考意見，毫無發貼分公司每天，氣息不論玻璃多少圖像化成員化學並不工作人員，股份有限公司，重要組合大力您現在豐富接着免費版公共不然運行平台世界上，造型家族字幕，手機鈴聲之外睡覺住房，狀況家。
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    $('#btn1').on('click', function () {
+      // 要放在上面或前面, 設定延遲幾秒自動消失
+      $('#toast1').toast({ delay: 3000 })
+      // 讓原本預設消失的 toast 顯示
+      $('#toast1').toast('show')
+    })
+
+    $('#btn2').on('click', function () {
+      // 要放在上面或前面, 設定延遲幾秒自動消失
+      $('#toast2').toast({ delay: 3000 })
+      $('#toast2').toast('show')
+    })
+
+    $('#btn3').on('click', function () {
+      // 要放在上面或前面, 設定延遲幾秒自動消失
+      $('#toast3').toast({ delay: 3000 })
+      $('#toast3').toast('show')
+    })
+  </script>
+</body>
+
+</html>

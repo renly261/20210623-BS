@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/bootstrap.css">
+  <style>
+    body {
+      background: #eee;
+    }
+
+    .container {
+      margin-bottom: 2rem;
+    }
+  </style>
+</head>
+
+<body>
+  <script src="../js/jquery-3.6.0.min.js"></script>
+  <script src="../js/bootstrap.bundle.min.js"></script>
+
+  <div class="container">
+    <h4>工具提示框 (Tooltips)</h4>
+    <ol>
+      <li>在使用彈出提示框之前, 必須包含 popper.js, 或者使用 bootstrap.bundle.js (已經包含在裡面)</li>
+      <li>需先設定 $('[data-toggle="tooltip"]').tooltip(), 才能使用</li>
+      <li>title="彈出訊息"</li>
+      <li>data-placement="", 可以設定 top right bottom left 四個方向</li>
+      <li>data-delay="延遲時間", 預設為 0, 單位為毫秒</li>
+      <li>data-offset="x, y", 彈出位移 x, y</li>
+    </ol>
+    <div class="row">
+      <div class="col">
+        <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-delay="300" data-offset="0, 5" data-placement="top" title="哈囉你們好, 這裡是台灣">
+          Tooltip on top
+        </button>
+        <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="Tooltip on right">
+          Tooltip on right
+        </button>
+        <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">
+          Tooltip on bottom
+        </button>
+        <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="left" title="Tooltip on left">
+          Tooltip on left
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    })
+  </script>
+</body>
+
+</html>

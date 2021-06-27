@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/bootstrap.css">
+  <style>
+    body {
+      background: #eee;
+    }
+
+    .container {
+      margin-bottom: 2rem;
+    }
+  </style>
+</head>
+
+<body>
+  <script src="../js/jquery-3.6.0.min.js"></script>
+  <script src="../js/bootstrap.bundle.min.js"></script>
+
+  <div class="container">
+    <h4>彈出提示框 (Popovers)</h4>
+    <ol>
+      <li>在使用彈出提示框之前, 必須包含 popper.js, 或者使用 bootstrap.bundle.js (已經包含在裡面)</li>
+      <li>需先設定 $('[data-toggle="popover"]').popover(), 才能使用</li>
+      <li>title="彈出框的標題", data-content="彈出框的內容"</li>
+      <li>data-placement="", 可以設定 top right bottom left 四個方向</li>
+      <li>data-trigger="hover" 滑鼠滑過去即可彈出, 預設是 data-trigger="click" (點擊彈出, 但點空的地方不會關閉 popover), data-trigger="focus" (點擊彈出, 點空的地方會關閉 popover)</li>
+    </ol>
+    <div class="row">
+      <div class="col">
+        <button type="button" class="btn btn-lg btn-danger" data-toggle="popover" data-placement="left" data-trigger="click" title="今天星期三" data-content="恐怖威望完善有着作業許多基本風景不承擔，驚訝直播主具備導致。" style="margin-top:300px;margin-left:300px;">Click to toggle popover</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 要用彈出提示框, 必須先在 script 裡先做啟動才有效果 -->
+  <!-- $(function () {} ) 等同於 jQ 的 $(document).ready(function), html 結構都載入完後要做的事 -->
+  <script>
+    $(function () {
+      $('[data-toggle="popover"]').popover()
+      // 點擊時觸發
+      $('[data-toggle="popover"]').on('show.bs.popover', function () {
+        alert('開始觸發時')
+      })
+      // 點擊後觸發
+      $('[data-toggle="popover"]').on('shown.bs.popover', function () {
+        alert('開始觸發後')
+      })
+      // 關閉時觸發
+      $('[data-toggle="popover"]').on('hide.bs.popover', function () {
+        alert('當關閉時')
+      })
+      // 關閉後觸發
+      $('[data-toggle="popover"]').on('hidden.bs.popover', function () {
+        alert('當關閉完畢後')
+      })
+    })
+  </script>
+</body>
+
+</html>
